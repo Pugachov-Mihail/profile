@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package profile;
+
+option go_package = "dota_traker.profile.v1;profile";
+
+service ProfileService {
+  rpc ProfileInfo (ProfileRequest) returns (ProfileResponse);
+}
+
+message ProfileRequest {
+  string ProfileId = 1;
+}
+
+message ProfileResponse {
+  string NicknameSteam = 1;
+  int64 IdUser = 2;
+}
