@@ -2,7 +2,7 @@ package app
 
 import (
 	"log/slog"
-	appgrpc "profile/internal/app/app"
+	appgrpc "profile/internal/app/grpc"
 )
 
 type App struct {

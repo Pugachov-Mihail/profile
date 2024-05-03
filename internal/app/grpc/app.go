@@ -5,6 +5,7 @@ import (
 	"google.golang.org/grpc"
 	"log/slog"
 	"net"
+	"profile/internal/grpc/profile"
 )
 
 type App struct {
@@ -16,6 +17,7 @@ type App struct {
 func New(log *slog.Logger, port int) *App {
 	grpcServer := grpc.NewServer()
 
+	profile.ServerApi(grpcServer)
 	return &App{
 		log:        log,
 		grpcServer: grpcServer,
